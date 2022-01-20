@@ -5,7 +5,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:run:firefox": "cypress run --browser firefox",
+    "cy:open:ct": "cypress open-ct",
+    "cy:run:ct": "cypress run-ct",
+    "cy:run:ct:chrome": "cypress run-ct --browser chrome",
+    "cy:run:ct:firefox": "cypress run-ct --browser firefox"
   },
   "dependencies": {
     "next": "12.0.8",

@@ -13,8 +13,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": "src" // add
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  // "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx"], // adds src directories
   "exclude": ["node_modules"]
 }
