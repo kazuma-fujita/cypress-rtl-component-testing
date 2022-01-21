@@ -1,9 +1,6 @@
-import { mount } from "@cypress/react";
-import Todo from "../../src/components/todo";
-
 describe("Todo component testing", () => {
   before(() => {
-    mount(<Todo />);
+    cy.visit("/");
     cy.findByRole("list");
   });
 

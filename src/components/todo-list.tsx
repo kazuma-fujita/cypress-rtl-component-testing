@@ -9,7 +9,9 @@ const TodoList: React.FC<Props> = ({ items }) => {
   return (
     <ul>
       {items.map((item) => (
-        <li key={item.id}>{item.description}</li>
+        <li key={item.id} aria-label={item.description}>
+          {item.description}
+        </li>
       ))}
     </ul>
   );

@@ -15,6 +15,7 @@ const AddTodo: React.FC<Props> = ({ setItems }) => {
       ...items,
       { id: Math.random().toString(), description: enteredText },
     ]);
+    textInputRef.current!.value = "";
   };
 
   return (

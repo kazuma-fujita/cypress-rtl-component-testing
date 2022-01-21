@@ -9,11 +9,11 @@
     "test": "jest",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:open:firefox": "cypress open --browser firefox",
     "cy:run:firefox": "cypress run --browser firefox",
     "cy:open:ct": "cypress open-ct",
     "cy:run:ct": "cypress run-ct",
-    "cy:run:ct:chrome": "cypress run-ct --browser chrome",
+    "cy:open:ct:firefox": "cypress open-ct --browser firefox",
     "cy:run:ct:firefox": "cypress run-ct --browser firefox"
   },
   "dependencies": {
