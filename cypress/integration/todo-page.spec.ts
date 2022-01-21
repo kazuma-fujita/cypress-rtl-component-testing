@@ -1,6 +1,6 @@
-describe("Todo component testing", () => {
+describe("Todo page testing", () => {
   before(() => {
-    cy.visit("/");
+    cy.visit("/todo");
     cy.findByRole("list");
   });
 

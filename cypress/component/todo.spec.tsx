@@ -2,7 +2,7 @@ import { mount } from "@cypress/react";
 import Todo from "../../src/components/todo";
 
 describe("Todo component testing", () => {
-  before(() => {
+  beforeEach(() => {
     mount(<Todo />);
     cy.findByRole("list");
   });
@@ -21,9 +21,21 @@ describe("Todo component testing", () => {
     cy.findByRole("listitem", { name: "first todo" });
   });
 
-  it("adds a second todo", () => {
+  it("adds two todo items", () => {
+    AddTodo("first todo");
     AddTodo("second todo");
     cy.findAllByRole("listitem").should("have.length", 2);
+    cy.findByRole("listitem", { name: "first todo" });
     cy.findByRole("listitem", { name: "second todo" });
+  });
+
+  it("adds three todo items", () => {
+    AddTodo("first todo");
+    AddTodo("second todo");
+    AddTodo("third todo");
+    cy.findAllByRole("listitem").should("have.length", 3);
+    cy.findByRole("listitem", { name: "first todo" });
+    cy.findByRole("listitem", { name: "second todo" });
+    cy.findByRole("listitem", { name: "third todo" });
   });
 });
