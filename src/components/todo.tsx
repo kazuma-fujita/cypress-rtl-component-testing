@@ -4,14 +4,14 @@ import TodoList from "./todo-list";
 
 export type Todo = {
   id: string;
-  text: string;
+  description: string;
 };
 
 const Todo: React.FC = () => {
   const [items, setItems] = useState<Todo[]>([]);
 
   return (
-    <div className="App">
+    <div>
       <CreateTodo setItems={setItems} />
       <TodoList items={items} />
     </div>

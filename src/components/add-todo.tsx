@@ -13,14 +13,14 @@ const AddTodo: React.FC<Props> = ({ setItems }) => {
     const enteredText = textInputRef.current!.value;
     setItems((items: Todo[]) => [
       ...items,
-      { id: Math.random().toString(), text: enteredText },
+      { id: Math.random().toString(), description: enteredText },
     ]);
   };
 
   return (
     <form onSubmit={todoSubmitHandler}>
       <div>
-        <input type="text" ref={textInputRef} />
+        <input type="text" aria-label="description" ref={textInputRef} />
       </div>
       <button type="submit">Add</button>
     </form>
