@@ -7,10 +7,5 @@
     // to avoid clashing with Jest types
     "types": ["cypress", "@testing-library/cypress"]
   },
-  "include": [
-    "../node_modules/cypress",
-    "./**/*.ts",
-    "./**/**.tsx",
-    "integration/1-getting-started/todo.spec.js"
-  ]
+  "include": ["../node_modules/cypress", "./**/*.ts", "./**/**.tsx"]
 }
