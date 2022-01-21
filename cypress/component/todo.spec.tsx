@@ -7,7 +7,7 @@ describe("Todo component testing", () => {
     cy.findByRole("list");
   });
 
-  const AddTodo = (description: string) => {
+  const addTodoItem = (description: string) => {
     const textbox = cy.findByRole("textbox", { name: "description" });
     textbox.type(description);
     textbox.should("have.value", description);
@@ -15,27 +15,25 @@ describe("Todo component testing", () => {
     textbox.should("have.value", "");
   };
 
+  const verifyToAddTodoItems = (descriptions: string[]) => {
+    descriptions.forEach((description: string) => {
+      addTodoItem(description);
+    });
+    cy.findAllByRole("listitem").should("have.length", descriptions.length);
+    descriptions.forEach((description: string) => {
+      cy.findByRole("listitem", { name: description });
+    });
+  };
+
   it("adds a first todo", () => {
-    AddTodo("first todo");
-    cy.findAllByRole("listitem").should("have.length", 1);
-    cy.findByRole("listitem", { name: "first todo" });
+    verifyToAddTodoItems(["first todo"]);
   });
 
   it("adds two todo items", () => {
-    AddTodo("first todo");
-    AddTodo("second todo");
-    cy.findAllByRole("listitem").should("have.length", 2);
-    cy.findByRole("listitem", { name: "first todo" });
-    cy.findByRole("listitem", { name: "second todo" });
+    verifyToAddTodoItems(["first todo", "second todo"]);
   });
 
   it("adds three todo items", () => {
-    AddTodo("first todo");
-    AddTodo("second todo");
-    AddTodo("third todo");
-    cy.findAllByRole("listitem").should("have.length", 3);
-    cy.findByRole("listitem", { name: "first todo" });
-    cy.findByRole("listitem", { name: "second todo" });
-    cy.findByRole("listitem", { name: "third todo" });
+    verifyToAddTodoItems(["first todo", "second todo", "third todo"]);
   });
 });

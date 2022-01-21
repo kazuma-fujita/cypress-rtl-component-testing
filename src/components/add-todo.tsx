@@ -9,13 +9,14 @@ const AddTodo: React.FC<Props> = ({ setItems }) => {
   const textInputRef = useRef<HTMLInputElement>(null);
 
   const todoSubmitHandler = (event: React.FormEvent) => {
+    if (!textInputRef.current) return;
     event.preventDefault();
-    const enteredText = textInputRef.current!.value;
+    const enteredText = textInputRef.current.value;
     setItems((items: Todo[]) => [
       ...items,
       { id: Math.random().toString(), description: enteredText },
     ]);
-    textInputRef.current!.value = "";
+    textInputRef.current.value = "";
   };
 
   return (

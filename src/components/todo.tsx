@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CreateTodo from "./add-todo";
+import AddTodo from "./add-todo";
 import TodoList from "./todo-list";
 
 export type Todo = {
@@ -12,7 +12,7 @@ const Todo: React.FC = () => {
 
   return (
     <div>
-      <CreateTodo setItems={setItems} />
+      <AddTodo setItems={setItems} />
       <TodoList items={items} />
     </div>
   );
